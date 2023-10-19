@@ -1,0 +1,25 @@
+<?php require('template/header.phtml') ?>
+
+    <h3> How this MVC Template works </h3>
+    <p>The way that this project template works is by splitting the files that make up the website into their own
+        respective
+        folders. The main folders are called Models, Views and Controllers. The Views folders contain all the files that
+        control
+        what the website looks like, so html and phtml files. The Controller uses the models and views files to control
+        how the
+        website should respond, i.e if the user logs in instead of signing up then the controller will redirect to the
+        relevant
+        models file. In this template the controller files are stored in the root folder.
+        The Models folder contains all the files that define the rules and algorithms that the website needs to complete
+        a
+        process like signing up or logging in.</p>
+<div>
+
+    <img src="images/mvc.png"/>
+</div>
+    <p>As you can see from this image, the view is given to the user and describes what the current page looks like. The
+        user
+        can then input some data to the controller which then uses the models and view files to determine which process
+        should
+        occur.</p>
+<?php require('template/footer.phtml') ?>

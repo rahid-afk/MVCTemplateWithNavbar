@@ -1,0 +1,15 @@
+<?php require('template/header.phtml') ?>
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <div>
+        <label>Calculator</label>
+        <input type="number" name="firstNumber" value="
+        <?php if (isset($_POST['firstNumber'])) {
+            echo $_POST['firstNumber'];
+        } ?>">
+        <input type="number" name="secondNumber" value="
+        <?php if (isset($_POST['secondNumber'])) {
+            echo $_POST['secondNumber'];
+        }
+        ?>">
+    </div>
+</form>
