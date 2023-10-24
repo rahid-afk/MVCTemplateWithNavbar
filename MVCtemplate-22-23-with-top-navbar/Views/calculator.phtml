@@ -1,15 +1,31 @@
 <?php require('template/header.phtml') ?>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-    <div>
-        <label>Calculator</label>
-        <input type="number" name="firstNumber" value="
+<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label>Enter first number:</label>
+        <input class="form-control" type="number" name="firstNumber" value="
         <?php if (isset($_POST['firstNumber'])) {
             echo $_POST['firstNumber'];
         } ?>">
-        <input type="number" name="secondNumber" value="
+        <label>Choose operator:</label>
+        <select class="form-control" name="operator">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+        </select>
+        <label>Enter second number:</label>
+        <input class="form-control" type="number" name="secondNumber" value="
         <?php if (isset($_POST['secondNumber'])) {
             echo $_POST['secondNumber'];
         }
         ?>">
     </div>
+    <div class="col-12">
+        <input class="btn btn-primary" type="submit" value="Submit" name="submit"/>
+    </div>
 </form>
+
+<?php if (isset($view->result)) : ?>
+    <p><?php echo $view->result; ?></p>
+<?php endif; ?>
+<?php require('template/footer.phtml') ?>
