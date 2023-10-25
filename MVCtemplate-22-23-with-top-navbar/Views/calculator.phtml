@@ -1,29 +1,36 @@
 <?php require('template/header.phtml') ?>
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="row g-3">
-    <div class="col-md-6">
-        <label>Enter first number:</label>
-        <input class="form-control" type="number" name="firstNumber" value="
-        <?php if (isset($_POST['firstNumber'])) {
-            echo $_POST['firstNumber'];
-        } ?>">
-        <label>Choose operator:</label>
-        <select class="form-control" name="operator">
-            <option value="add">+</option>
-            <option value="subtract">-</option>
-            <option value="multiply">*</option>
-            <option value="divide">/</option>
-        </select>
-        <label>Enter second number:</label>
-        <input class="form-control" type="number" name="secondNumber" value="
-        <?php if (isset($_POST['secondNumber'])) {
-            echo $_POST['secondNumber'];
-        }
-        ?>">
-    </div>
-    <div class="col-12">
-        <input class="btn btn-primary" type="submit" value="Submit" name="submit"/>
-    </div>
-</form>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" class="row g-3">
+        <div class="col-md-6">
+            <!--        <label>Enter first number:</label>-->
+            <!--        <input class="form-control" type="number" name="firstNumber" value="-->
+            <!--        --><?php //if (isset($_POST['firstNumber'])) {
+            //            echo $_POST['firstNumber'];
+            //        } ?><!--">-->
+            <!--        <label>Choose operator:</label>-->
+            <!--        <select class="form-control" name="operator">-->
+            <!--            <option value="add">+</option>-->
+            <!--            <option value="subtract">-</option>-->
+            <!--            <option value="multiply">*</option>-->
+            <!--            <option value="divide">/</option>-->
+            <!--        </select>-->
+            <!--        <label>Enter second number:</label>-->
+            <!--        <input class="form-control" type="number" name="secondNumber" value="-->
+            <!--        --><?php //if (isset($_POST['secondNumber'])) {
+            //            echo $_POST['secondNumber'];
+            //        }
+            //        ?><!--">-->
+
+            <label>Enter the expression you want to calculate:</label>
+            <input class="form-control" type="text" name="expression" value="
+        <?php if (isset($_POST['expression'])) {
+                echo $_POST['expression'];
+            }
+            ?>"
+        </div>
+        <div class="col-12">
+            <input class="btn btn-primary" type="submit" value="Submit" name="submit"/>
+        </div>
+    </form>
 
 <?php if (isset($view->result)) : ?>
     <p><?php echo $view->result; ?></p>
