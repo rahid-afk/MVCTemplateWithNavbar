@@ -10,6 +10,8 @@ class Persistence
     }
 
     public function createCookie(){
+        var_dump($this->name);
+        var_dump($this->name);        var_dump($this->name);        var_dump($this->name);
         setcookie('name', $this->name);
         setcookie('birthday', $this->birthday);
     }

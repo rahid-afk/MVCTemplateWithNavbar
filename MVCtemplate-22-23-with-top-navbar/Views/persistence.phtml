@@ -1,12 +1,11 @@
 <?php require('template/header.phtml'); ?>
 <?php //session_start(); ?>
-    <form action="<? echo $_SERVER['PHP_SELF']; ?>" method="post">
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
         <label>Please enter your name and birthday:</label>
         <div>
             <br>
             <label>Your name: </label>
-            <input type="text" name="name" value="
-        <?php if (isset($_POST['name'])) {
+            <input type="text" name="name" value="<?php if (isset($_POST['name'])) {
                 echo $_POST['name'];
             }
             ?>">
