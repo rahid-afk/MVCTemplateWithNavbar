@@ -1,0 +1,23 @@
+<?php require('template/header.phtml'); ?>
+
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <div>
+            <label>Username: </label>
+            <input type="text" name="name" value="<?php
+            if (isset($_POST['name'])) {
+                echo $_POST['name'];
+            } ?> "/>
+        </div>
+        <div>
+            <label>Password: </label>
+            <input type="password" name="password" value="<?php
+            if (isset($_POST['password'])) {
+                echo $_POST['password'];
+            } ?> "/>
+        </div>
+        <div>
+            <input type="button" name="submit" value="Log In"/>
+        </div>
+    </form>
+
+<?php require('template/footer.phtml');
